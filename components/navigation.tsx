@@ -22,9 +22,10 @@ export default function Navigation() {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Education", href: "#education" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
-    { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
   ]
 
@@ -32,14 +33,12 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-morphism" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <motion.div whileHover={{ scale: 1.05 }} className="text-2xl font-bold liquid-gradient font-sora">
-            John Doe
+          <motion.div whileHover={{ scale: 1.05 }} className="text-2xl font-bold text-black font-sora">
+            Vamshi Vardhan Mittapally
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -49,7 +48,7 @@ export default function Navigation() {
                 key={item.name}
                 href={item.href}
                 whileHover={{ scale: 1.1 }}
-                className="text-white/80 hover:text-cyan-400 transition-colors"
+                className="text-gray-700 hover:text-blue-600 transition-colors"
               >
                 {item.name}
               </motion.a>
@@ -58,15 +57,18 @@ export default function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="text-white hover:text-cyan-400"
+              className="text-gray-700 hover:text-blue-600"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="text-white">
+          <div className="md:hidden flex items-center gap-2">
+            <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="text-gray-700">
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -77,13 +79,13 @@ export default function Navigation() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-4 glass-morphism rounded-lg p-4"
+            className="md:hidden mt-4 bg-white border border-gray-200 rounded-lg p-4 shadow-lg"
           >
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-white/80 hover:text-cyan-400 transition-colors"
+                className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

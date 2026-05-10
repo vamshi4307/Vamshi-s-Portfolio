@@ -9,13 +9,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora" })
 
 export const metadata: Metadata = {
-  title: "John Doe - Creative Technologist",
-  description: "Inventing tomorrow's web, one line of code at a time.",
-  keywords: ["developer", "portfolio", "full-stack", "creative technologist"],
-  authors: [{ name: "John Doe" }],
+  title: "Vamshi Vardhan Mittapally - AI Engineer & Developer",
+  description: "MSc AI student specializing in Smart Sensors and Actuators. Experienced in Machine Learning, Python, MATLAB, and innovative technology solutions.",
+  keywords: ["AI Engineer", "Machine Learning", "Python", "MATLAB", "Smart Sensors", "Portfolio"],
+  authors: [{ name: "Vamshi Vardhan Mittapally" }],
   openGraph: {
-    title: "John Doe - Creative Technologist",
-    description: "Inventing tomorrow's web, one line of code at a time.",
+    title: "Vamshi Vardhan Mittapally - AI Engineer & Developer",
+    description: "MSc AI student specializing in Smart Sensors and Actuators. Experienced in Machine Learning, Python, MATLAB, and innovative technology solutions.",
     type: "website",
   },
     generator: 'senotron'
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
           <Toaster />
         </ThemeProvider>
