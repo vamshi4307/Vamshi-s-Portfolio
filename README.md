@@ -59,11 +59,32 @@ cd modern-portfolio
 # Install dependencies
 npm install
 
+# Set up environment variables for email functionality
+cp .env.example .env.local
+# Edit .env.local with your Gmail credentials (see .env.example for instructions)
+
 # Run the development server
 npm run dev
 
 # Open http://localhost:3000 in your browser
 ```
+
+### 📧 Email Configuration
+
+The contact form uses Gmail SMTP to send emails. To set it up:
+
+1. Create a `.env.local` file in the root directory
+2. Copy the contents from `.env.example`
+3. Replace the placeholder values with your Gmail credentials:
+   - `EMAIL_USER`: Your Gmail address
+   - `EMAIL_PASS`: Gmail App Password (not your regular password)
+
+**Setting up Gmail App Password:**
+1. Go to [Google Account Settings](https://myaccount.google.com/)
+2. Enable 2-Step Verification
+3. Go to Security > App passwords
+4. Generate a password for "Mail"
+5. Use this password as `EMAIL_PASS`
 
 ---
 

@@ -4,8 +4,11 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { useTheme } from "next-themes"
 
 export default function SkillsSection() {
+  const { theme } = useTheme()
+
   const skills = [
     { name: "Python", level: 90, category: "Programming" },
     { name: "Machine Learning", level: 85, category: "AI/ML" },
@@ -22,7 +25,9 @@ export default function SkillsSection() {
   const categories = ["All", "Programming", "AI/ML", "Engineering", "Systems", "IoT", "Tools", "Web Development"]
 
   return (
-    <section id="skills" className="py-20 relative bg-white">
+    <section id="skills" className={`py-20 relative ${
+      theme === 'dark' ? 'bg-gray-900' : 'bg-white'
+    }`}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -30,8 +35,12 @@ export default function SkillsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black font-sora">Skills & Expertise</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className={`text-4xl md:text-6xl font-bold mb-6 font-sora ${
+            theme === 'dark' ? 'text-white' : 'text-black'
+          }`}>Skills & Expertise</h2>
+          <p className={`text-xl max-w-3xl mx-auto ${
+            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             Technical skills and competencies developed through education and professional experience.
           </p>
         </motion.div>
@@ -45,16 +54,28 @@ export default function SkillsSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <Card className="bg-gray-50 border-gray-200 hover:shadow-lg transition-shadow">
+                <Card className={`${
+                  theme === 'dark'
+                    ? 'bg-gray-800 border-gray-700 hover:shadow-lg transition-shadow'
+                    : 'bg-gray-50 border-gray-200 hover:shadow-lg transition-shadow'
+                }`}>
                   <CardContent className="p-6">
                     <div className="flex justify-between items-center mb-3">
-                      <h3 className="font-semibold text-black">{skill.name}</h3>
-                      <Badge variant="outline" className="text-xs">
+                      <h3 className={`font-semibold ${
+                        theme === 'dark' ? 'text-white' : 'text-black'
+                      }`}>{skill.name}</h3>
+                      <Badge variant="outline" className={`text-xs ${
+                        theme === 'dark'
+                          ? 'border-gray-600 text-gray-300'
+                          : ''
+                      }`}>
                         {skill.category}
                       </Badge>
                     </div>
                     <Progress value={skill.level} className="h-2" />
-                    <p className="text-sm text-gray-600 mt-2">{skill.level}% Proficiency</p>
+                    <p className={`text-sm mt-2 ${
+                      theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                    }`}>{skill.level}% Proficiency</p>
                   </CardContent>
                 </Card>
               </motion.div>
