@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Globe } from "lucide-react"
+import { Mail, MapPin, Send, Github, Linkedin, Globe, Download } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { useTheme } from "next-themes"
 
@@ -212,67 +212,56 @@ export default function ContactSection() {
                 } flex items-center gap-2`}>🌐 Connect Online</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 gap-4">
-                  <a
-                    href="https://www.linkedin.com/in/vamshi-vardhan-mittapally-b3b69021a/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-3 p-4 rounded-lg border transition-colors group ${
-                      theme === 'dark'
-                        ? 'border-gray-600 hover:border-blue-400 hover:bg-gray-700'
-                        : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
-                    }`}
+                <div className="grid grid-cols-1 gap-3">
+                  <Button
+                    asChild
+                    variant={theme === 'dark' ? 'outline' : 'secondary'}
+                    className="w-full justify-start gap-3 py-4"
                   >
-                    <Linkedin className="h-6 w-6 text-blue-600 group-hover:text-blue-700" />
-                    <div>
-                      <div className={`font-medium ${
-                        theme === 'dark' ? 'text-white' : 'text-black'
-                      }`}>LinkedIn</div>
-                      <div className={`text-sm ${
-                        theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                      }`}>Professional Network</div>
-                    </div>
-                  </a>
+                    <a href="https://www.linkedin.com/in/vamshi-vardhan-mittapally-b3b69021a/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-6 w-6 text-blue-600" />
+                      <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                        LinkedIn
+                      </span>
+                    </a>
+                  </Button>
 
-                  <a
-                    href="https://github.com/vamshi4307"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-3 p-4 rounded-lg border transition-colors group ${
-                      theme === 'dark'
-                        ? 'border-gray-600 hover:border-gray-500 hover:bg-gray-700'
-                        : 'border-gray-200 hover:border-gray-400 hover:bg-gray-50'
-                    }`}
+                  <Button
+                    asChild
+                    variant={theme === 'dark' ? 'outline' : 'secondary'}
+                    className="w-full justify-start gap-3 py-4"
                   >
-                    <Github className="h-6 w-6 text-gray-700 group-hover:text-gray-800" />
-                    <div>
-                      <div className={`font-medium ${
-                        theme === 'dark' ? 'text-white' : 'text-black'
-                      }`}>GitHub</div>
-                      <div className={`text-sm ${
-                        theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                      }`}>Code Repository</div>
-                    </div>
-                  </a>
+                    <a href="https://github.com/vamshi4307" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-6 w-6 text-gray-700" />
+                      <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                        GitHub
+                      </span>
+                    </a>
+                  </Button>
 
-                  <a
-                    href="mailto:vamshivardhan4307@gmail.com"
-                    className={`flex items-center gap-3 p-4 rounded-lg border transition-colors group ${
-                      theme === 'dark'
-                        ? 'border-gray-600 hover:border-red-400 hover:bg-gray-700'
-                        : 'border-gray-200 hover:border-red-300 hover:bg-red-50'
-                    }`}
+                  <Button
+                    asChild
+                    variant={theme === 'dark' ? 'outline' : 'secondary'}
+                    className="w-full justify-start gap-3 py-4"
                   >
-                    <Mail className="h-6 w-6 text-red-600 group-hover:text-red-700" />
-                    <div>
-                      <div className={`font-medium ${
-                        theme === 'dark' ? 'text-white' : 'text-black'
-                      }`}>Email</div>
-                      <div className={`text-sm ${
-                        theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                      }`}>Direct Contact</div>
-                    </div>
-                  </a>
+                    <a href="mailto:vamshivardhan4307@gmail.com">
+                      <Mail className="h-6 w-6 text-red-600" />
+                      <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                        Email
+                      </span>
+                    </a>
+                  </Button>
+
+                  <Button
+                    size="sm"
+                    className="w-full justify-start gap-3 py-4"
+                    onClick={() => window.open('/resume/resume.pdf', '_blank')}
+                  >
+                    <Download className="h-6 w-6" />
+                    <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                      Resume
+                    </span>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -291,13 +280,17 @@ export default function ContactSection() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className={`${
               theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-            }`}>© 2025 Vamshi Vardhan Mittapally. Built with Next.js and modern web technologies.</div>
+            }`}>
+              Designed & Developed by Vamshi Vardhan Mittapally
+              <br />
+              © {new Date().getFullYear()}
+            </div>
 
             <div className="flex items-center gap-4">
               <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
               <span className={`${
                 theme === 'dark' ? 'text-gray-500' : 'text-gray-500'
-              } text-sm`}>AI & Engineering Portfolio</span>
+              } text-sm`}>AI Engineering Portfolio</span>
             </div>
           </div>
         </motion.footer>

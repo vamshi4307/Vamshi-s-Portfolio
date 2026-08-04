@@ -11,18 +11,18 @@ export default function EducationSection() {
 
   const education = [
     {
-      degree: "MSc in Artificial Intelligence using Smart Sensors and Actuators",
-      institution: "Deggendorf Institute of Technology (DIT), Cham Campus",
-      location: "Cham, Germany",
+      degree: "Master of Engineering (M.Eng.) in Artificial Intelligence for Smart Sensors and Actuators",
+      institution: "Deggendorf Institute of Technology",
+      location: "Germany",
       period: "March 2026 – Present",
-      description: "Specializing in AI applications for smart sensors and actuators, focusing on machine learning algorithms, sensor integration, and real-time data processing."
+      description: "Focused on sensor-driven AI systems, embedded intelligence, control strategies, and real-time signal processing for smart actuators."
     },
     {
       degree: "Bachelor of Engineering in Electronics and Communication Engineering",
       institution: "MVSR Engineering College",
       location: "Hyderabad, India",
       period: "September 2020 – June 2024",
-      description: "Comprehensive education in electronics, communication systems, signal processing, and embedded systems with practical project experience."
+      description: "Built strong foundations in electronics, communication networks, signal processing, and embedded systems with hands-on engineering experience."
     }
   ]
 

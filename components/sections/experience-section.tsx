@@ -11,12 +11,12 @@ export default function ExperienceSection() {
 
   const experiences = [
     {
-      title: "Trust and Safety Associate",
+      title: "Operations Associate",
       company: "Accenture",
       location: "Remote",
       period: "February 2025 – February 2026",
-      description: "Ensured platform safety and user trust through content moderation, risk assessment, and implementing AI-driven safety measures.",
-      skills: ["Content Moderation", "Risk Assessment", "AI Tools"]
+      description: "Supported Risk & Payments Operations, improving data quality and operational workflows across high-volume transactions. Collaborated with cross-functional teams, followed compliance procedures, and strengthened accuracy for critical operational processes.",
+      skills: ["Risk & Payments Operations", "Data Quality", "Operational Workflows", "Cross-functional Collaboration", "Compliance"]
     },
     {
       title: "Research Project - Missile Trajectory Control",

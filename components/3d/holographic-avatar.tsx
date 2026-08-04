@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 
 export default function HolographicAvatar() {
@@ -23,11 +24,16 @@ export default function HolographicAvatar() {
       <motion.div
         animate={{ y: [-5, 5, -5] }}
         transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-        className="absolute inset-4 rounded-full glass-morphism flex items-center justify-center overflow-hidden"
+        className="absolute inset-4 rounded-full glass-morphism overflow-hidden"
       >
-        {/* Placeholder Avatar - Replace with actual image */}
-        <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 to-purple-400/20 rounded-full flex items-center justify-center">
-          <div className="text-4xl">👨‍💻</div>
+        <div className="relative w-full h-full rounded-full">
+          <Image
+            src="/profile-photo.png"
+            alt="Avatar"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </motion.div>
 

@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,25 +59,10 @@ export default function Navigation() {
                 {item.name}
               </motion.a>
             ))}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className={`${
-                theme === 'dark' ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'
-              }`}
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
           </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className={`${
-              theme === 'dark' ? 'text-gray-300 hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'
-            }`}>
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className={`${
               theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
             }`}>

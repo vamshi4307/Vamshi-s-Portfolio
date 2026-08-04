@@ -22,7 +22,7 @@ export default function AboutSection() {
           <p className={`text-xl max-w-3xl mx-auto ${
             theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
           }`}>
-            I am an MSc Artificial Intelligence student at Deggendorf Institute of Technology, specializing in Smart Sensors and Actuators. Passionate about artificial intelligence, machine learning, and intelligent systems, with experience in Python and AI-based projects. Interested in building innovative solutions that combine software, automation, and smart technologies.
+            I am currently pursuing a Master of Engineering (M.Eng.) in Artificial Intelligence for Smart Sensors and Actuators at Deggendorf Institute of Technology. With a foundation in Electronics & Communication Engineering and professional experience at Accenture, I focus on designing intelligent systems that combine computer vision, embedded sensing, and automation. My work centers on building dependable AI solutions for sensor-driven applications and operational efficiency, while collaborating across engineering teams to deliver results that meet compliance and production readiness requirements.
           </p>
         </motion.div>
       </div>
